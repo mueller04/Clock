@@ -6,6 +6,14 @@ public class Clock {
 	
 	public String provideLamps(LocalTime time)
 	{
-		return "Y";		
+		int minute = time.getSecond();
+		if (minute % 2 == 0)
+		{
+			return "Y";
+		} else
+		{
+			return "O";
+		}
+				
 	}
 }
