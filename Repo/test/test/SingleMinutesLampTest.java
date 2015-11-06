@@ -18,7 +18,7 @@ public class SingleMinutesLampTest {
 		
 		//Act
 		LocalTime time = LocalTime.of(0, 0, 0, 0);
-		String output = clock.provideLamps(time);
+		String output = clock.provideSingleMinutesLamp(time);
 		
 		//Assert
 		Assert.assertEquals("OOOO", output);

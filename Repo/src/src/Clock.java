@@ -6,8 +6,8 @@ public class Clock {
 	
 	public String provideLamps(LocalTime time)
 	{
-		int minute = time.getSecond();
-		if (minute % 2 == 0)
+		int second = time.getSecond();
+		if (second % 2 == 0)
 		{
 			return "Y";
 		} else
@@ -15,5 +15,27 @@ public class Clock {
 			return "O";
 		}
 				
+	}
+	
+	public String provideSingleMinutesLamp(LocalTime time)
+	{
+		int minute = time.getMinute();
+		String minuteStr = String.valueOf(minute);
+		int length = minuteStr.length();
+		
+		if (length > 1)
+		{
+			String[] characters = minuteStr.split("_");
+			minute = Integer.parseInt(characters[0]);
+		}
+		
+		if (minute == 0)
+		{
+			return "OOOO";
+		} else
+		{
+			return "error";
+		}
+		
 	}
 }
