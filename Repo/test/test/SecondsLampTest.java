@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import src.Clock;
 
-public class clockTest {
+public class SecondsLampTest {
 
 	@Test
 	public void secondsLampReturnsYEvenSeconds() {
