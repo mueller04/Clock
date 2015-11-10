@@ -32,6 +32,9 @@ public class Clock {
 		if (minute == 0)
 		{
 			return "OOOO";
+		} else if (minute == 1)
+		{
+			return "YOOO";
 		} else
 		{
 			return "error";
