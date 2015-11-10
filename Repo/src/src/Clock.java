@@ -29,16 +29,15 @@ public class Clock {
 			minute = Integer.parseInt(characters[0]);
 		}
 		
-		if (minute == 0)
+		int j = 0;
+		String[] returnString = {"O","O","O","O"};
+		for (int i = 0; i <= minute - 1; i++)
 		{
-			return "OOOO";
-		} else if (minute == 1)
-		{
-			return "YOOO";
-		} else
-		{
-			return "error";
+			returnString[i] = "Y";
+			j++;			
 		}
 		
+		String result = String.join("",returnString);
+		return result;
 	}
 }
