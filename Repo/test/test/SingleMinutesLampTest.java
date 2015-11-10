@@ -23,5 +23,17 @@ public class SingleMinutesLampTest {
 		//Assert
 		Assert.assertEquals("OOOO", output);
 	}
-
+	
+	@Test
+	public void oneminuteReturnsYOOO() {
+	//Arrange
+		Clock clock = new Clock();
+		
+		//Act
+		LocalTime time = LocalTime.of(0, 1, 0, 0);
+		String output = clock.provideSingleMinutesLamp(time);
+		
+		//Assert
+		Assert.assertEquals("YOOO", output);
+	}
 }
