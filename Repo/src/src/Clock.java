@@ -26,7 +26,7 @@ public class Clock {
 		if (length > 1)
 		{
 			String[] characters = minuteStr.split("_");
-			minute = Integer.parseInt(characters[0]);
+			minute = Integer.parseInt(characters[1]);
 		}
 		
 		String[] returnString = {"O","O","O","O"};
