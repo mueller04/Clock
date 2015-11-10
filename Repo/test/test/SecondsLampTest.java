@@ -16,7 +16,7 @@ public class SecondsLampTest {
 		
 		//act
 		LocalTime localtime = LocalTime.of(0, 0, 0, 0);
-		String output = clock.provideLamps(localtime);
+		String output = clock.provideSecondsLamps(localtime);
 		
 		//assert
 		Assert.assertEquals("Y", output);
@@ -29,7 +29,7 @@ public class SecondsLampTest {
 
 		//act
 		LocalTime localtime = LocalTime.of(0, 0, 1, 0);
-		String output = clock.provideLamps(localtime);
+		String output = clock.provideSecondsLamps(localtime);
 
 		//assert
 		Assert.assertEquals("O", output);

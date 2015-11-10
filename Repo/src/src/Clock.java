@@ -4,7 +4,7 @@ import java.time.LocalTime;
 
 public class Clock {
 	
-	public String provideLamps(LocalTime time)
+	public String provideSecondsLamps(LocalTime time)
 	{
 		int second = time.getSecond();
 		if (second % 2 == 0)
