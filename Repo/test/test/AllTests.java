@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ SecondsLampTest.class, SingleMinutesLampTest.class })
+@SuiteClasses({ SecondsLampTest.class, SingleMinutesLampTest.class, FiveMinuteLampTest.class })
 public class AllTests {
 
 }

@@ -38,4 +38,13 @@ public class Clock {
 		String result = String.join("",returnString);
 		return result;
 	}
+	
+	public String provideFiveMinutesLamp(LocalTime time){
+		
+		String[] returnString = {"O","O","O","O","O","O","O","O","O","O","O"};
+		
+		String result = String.join("", returnString);
+		return result;
+	}
+	
 }
