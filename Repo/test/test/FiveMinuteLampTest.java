@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.time.LocalTime;
 
 import src.Clock;
+import src.FiveMinutesLamp;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,10 +16,11 @@ public class FiveMinuteLampTest {
 	public void zeroMinutesReturnsOOOOOOOOOOO() {
 		//Arrange
 		Clock clock = new Clock();
+		FiveMinutesLamp fiveMinutesLamp = new FiveMinutesLamp();
 		
 		//Act
 		int numberOfLamps = 0;
-		String output = clock.provideFiveMinutesLamp(numberOfLamps);
+		String output = fiveMinutesLamp.provideLamps(numberOfLamps, "Y");
 		
 		//Assert
 		Assert.assertEquals("OOOOOOOOOOO", output);
@@ -29,11 +31,11 @@ public class FiveMinuteLampTest {
 	@Test
 	public void fiveMinutesReturnsYOOOOOOOOOO() {
 		//Arrange
-		Clock clock = new Clock();
+		FiveMinutesLamp fiveMinutesLamp = new FiveMinutesLamp();
 		
 		//Act
 		int numberOfLamps = 1;
-		String output = clock.provideFiveMinutesLamp(numberOfLamps);
+		String output = fiveMinutesLamp.provideLamps(numberOfLamps, "Y");
 		
 		//Assert
 		Assert.assertEquals("YOOOOOOOOOO", output);		
@@ -42,11 +44,11 @@ public class FiveMinuteLampTest {
 	@Test
 	public void tenMinutesReturnsYYOOOOOOOOO() {
 		//Arrange
-		Clock clock = new Clock();
+		FiveMinutesLamp fiveMinutesLamp = new FiveMinutesLamp();
 		
 		//Act
 		int numberOfLamps = 2;
-		String output = clock.provideFiveMinutesLamp(numberOfLamps);
+		String output = fiveMinutesLamp.provideLamps(numberOfLamps, "Y");
 		
 		//Assert
 		Assert.assertEquals("YYOOOOOOOOO", output);		
@@ -57,11 +59,11 @@ public class FiveMinuteLampTest {
 	@Test
 	public void fiftynineMinutesReturnsYYRYYRYYRYY() {
 		//Arrange
-		Clock clock = new Clock();
+		FiveMinutesLamp fiveMinutesLamp = new FiveMinutesLamp();
 		
 		//Act
 		int numberOfLamps = 11;
-		String output = clock.provideFiveMinutesLamp(numberOfLamps);
+		String output = fiveMinutesLamp.provideLamps(numberOfLamps, "Y");
 		
 		//Assert
 		Assert.assertEquals("YYRYYRYYRYY", output);		

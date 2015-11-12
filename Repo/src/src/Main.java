@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Clock clock = new Clock();
-		LocalTime time = LocalTime.of(0,59,1,0);
+		LocalTime time = LocalTime.of(13,32,2,0);
 		clock.DisplayTime(time);
 	}
 	

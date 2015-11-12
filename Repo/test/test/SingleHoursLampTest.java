@@ -6,46 +6,53 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import src.Clock;
+import src.FiveHoursLamp;
+import src.FiveMinutesLamp;
+import src.ResultSet;
 
 public class SingleHoursLampTest {
 
 	@Test
-	public void zeroMinuteReturnsOOOO() {
+	public void zeroHourReturnsOOOO() {
 		//Arrange
 		Clock clock = new Clock();
+		FiveHoursLamp fiveLamp = new FiveHoursLamp();
 		
 		//Act
 		int hour = 0;
-		String result = clock.provideSingleHourLamp(hour);
+		ResultSet result = clock.DisplayMinutesAndHours(hour, "hour", "R", fiveLamp);
+
 			
 		//Assert
-		Assert.assertEquals("OOOO", result);
+		Assert.assertEquals("single hour OOOO", result.getSingleRow());
 	}
 
 	@Test
-	public void oneMinuteReturnsROOO() {
+	public void oneHourReturnsROOO() {
 		//Arrange
 		Clock clock = new Clock();
-		
+		FiveHoursLamp fiveLamp = new FiveHoursLamp();
+
 		//Act
 		int hour = 1;
-		String result = clock.provideSingleHourLamp(hour);
+		ResultSet result = clock.DisplayMinutesAndHours(hour, "hour", "R", fiveLamp);
 			
 		//Assert
-		Assert.assertEquals("ROOO", result);
+		Assert.assertEquals("single hour ROOO", result.getSingleRow());
 	}
 	
 	@Test
-	public void fourMinuteReturnsRRRR() {
+	public void fourHourReturnsRRRR() {
 		//Arrange
 		Clock clock = new Clock();
-		
+		FiveHoursLamp fiveLamp = new FiveHoursLamp();
+
 		//Act
 		int hour = 4;
-		String result = clock.provideSingleHourLamp(hour);
+		ResultSet result = clock.DisplayMinutesAndHours(hour, "hour", "R", fiveLamp);
 			
 		//Assert
-		Assert.assertEquals("RRRR", result);
+		Assert.assertEquals("single hour RRRR", result.getSingleRow());
 	}
 	
 }

@@ -12,62 +12,44 @@ public class Clock {
 		} else
 		{
 			return "O";
-		}
-				
+		}		
 	}
 	
-	public String provideSingleMinutesLamp(int minute)
-	{
-		String[] returnString = {"O","O","O","O"};
-		
-		for (int i = 0; i <= minute - 1; i++)
-		{
-			returnString[i] = "Y";			
-		}
-		
-		String result = String.join("",returnString);
-		return result;
-	}
-	
-	public String provideFiveMinutesLamp(int numberOfLamps){
-		
-
-		
-		String[] returnString = {"O","O","O","O","O","O","O","O","O","O","O"};
-		
-		for (int i = 0; i <= numberOfLamps - 1; i++){
-			returnString[i] = "Y";	
-			
-			if (i == 2 || i == 5 || i == 8) {
-				returnString[i] = "R";		
-			}
-		}	
-		
-		String result = String.join("", returnString);
-		return result;
-	}
-	
-	public String provideSingleHourLamp(int numberOfLamps){
+	public String provideFourLampString(int numberOfLamps, String color){
 		String[] returnString = {"O","O","O","O"};
 		for (int i = 0; i <= numberOfLamps - 1; i++){
-			returnString[i] = "R";	
+			returnString[i] = color;	
 		}
 		String result = String.join("",returnString);
 		return result;
 	}
-	
-	
+		
 	public void DisplayTime(LocalTime time) {
 		int second = time.getSecond();
 		System.out.println("seconds " + provideSecondsLamps(second));
 		
-		int minute = time.getMinute();
-		int modulus = minute % 5; 
-		minute = minute - modulus;
-		int numberOfFiveMinuteLamps = minute / 5;
-		System.out.println("single minutes " + provideSingleMinutesLamp(modulus));
-		System.out.println("five minutes " + provideFiveMinutesLamp(numberOfFiveMinuteLamps));
+		int hour = time.getHour();
+		FiveHoursLamp fiveHoursLamp = new FiveHoursLamp();
+		ResultSet hourResult = DisplayMinutesAndHours(hour, "hours", "R", fiveHoursLamp);
+		System.out.println(hourResult.fiveRow);
+		System.out.println(hourResult.singleRow);
 		
+		int minute = time.getMinute();
+		FiveMinutesLamp fiveMinutesLamp = new FiveMinutesLamp();
+		ResultSet minuteResult = DisplayMinutesAndHours(minute, "minutes", "Y", fiveMinutesLamp);
+		System.out.println(minuteResult.fiveRow);
+		System.out.println(minuteResult.singleRow);
 	}
 	
+	public ResultSet DisplayMinutesAndHours(int timeUnit, String desc, String color, FiveUnitLamp fiveLamp) {
+		int modulus = timeUnit % 5; 
+		timeUnit = timeUnit - modulus;
+		int numberOfLamps = timeUnit / 5;
+		
+		ResultSet resultSet = new ResultSet();
+		
+		resultSet.setFiveRow("single " + desc + " " + fiveLamp.provideLamps(numberOfLamps, color));
+		resultSet.setSingleRow("single " + desc + " " + provideFourLampString(modulus, color));
+		return resultSet;
+	}
 }
