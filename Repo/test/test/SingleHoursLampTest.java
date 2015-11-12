@@ -28,7 +28,7 @@ public class SingleHoursLampTest {
 		Clock clock = new Clock();
 		
 		//Act
-		int hour = 0;
+		int hour = 1;
 		String result = clock.provideSingleHourLamp(hour);
 			
 		//Assert
