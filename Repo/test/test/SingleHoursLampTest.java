@@ -35,4 +35,17 @@ public class SingleHoursLampTest {
 		Assert.assertEquals("ROOO", result);
 	}
 	
+	@Test
+	public void fourMinuteReturnsRRRR() {
+		//Arrange
+		Clock clock = new Clock();
+		
+		//Act
+		int hour = 4;
+		String result = clock.provideSingleHourLamp(hour);
+			
+		//Assert
+		Assert.assertEquals("RRRR", result);
+	}
+	
 }
