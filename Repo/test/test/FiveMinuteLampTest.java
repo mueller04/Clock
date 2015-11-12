@@ -36,7 +36,32 @@ public class FiveMinuteLampTest {
 		String output = clock.provideFiveMinutesLamp(time);
 		
 		//Assert
-		Assert.assertEquals("YOOOOOOOOOO", output);
+		Assert.assertEquals("YOOOOOOOOOO", output);		
+	}
+	
+	@Test
+	public void tenMinutesReturnsYYOOOOOOOOO() {
+		//Arrange
+		Clock clock = new Clock();
 		
+		//Act
+		LocalTime time = LocalTime.of(0, 10,0,0);
+		String output = clock.provideFiveMinutesLamp(time);
+		
+		//Assert
+		Assert.assertEquals("YYOOOOOOOOO", output);		
+	}
+	
+	@Test
+	public void elevenMinutesReturnsYYOOOOOOOOO() {
+		//Arrange
+		Clock clock = new Clock();
+		
+		//Act
+		LocalTime time = LocalTime.of(0, 11,0,0);
+		String output = clock.provideFiveMinutesLamp(time);
+		
+		//Assert
+		Assert.assertEquals("YYOOOOOOOOO", output);		
 	}
 }
