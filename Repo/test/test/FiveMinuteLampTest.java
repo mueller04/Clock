@@ -77,4 +77,17 @@ public class FiveMinuteLampTest {
 		//Assert
 		Assert.assertEquals("YYROOOOOOOO", output);		
 	}
+	
+	@Test
+	public void fiftynineMinutesReturnsYYRYYRYYRYY() {
+		//Arrange
+		Clock clock = new Clock();
+		
+		//Act
+		LocalTime time = LocalTime.of(0, 59,0,0);
+		String output = clock.provideFiveMinutesLamp(time);
+		
+		//Assert
+		Assert.assertEquals("YYRYYRYYRYY", output);		
+	}
 }
