@@ -47,6 +47,15 @@ public class Clock {
 		return result;
 	}
 	
+	public String provideSingleHourLamp(int numberOfLamps){
+		String[] returnString = {"O","O","O","O"};
+		for (int i = 0; i <= numberOfLamps - 1; i++){
+			returnString[i] = "R";	
+		}
+		String result = String.join("",returnString);
+		return result;
+	}
+	
 	
 	public void DisplayTime(LocalTime time) {
 		int second = time.getSecond();
