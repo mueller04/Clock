@@ -17,8 +17,8 @@ public class FiveMinuteLampTest {
 		Clock clock = new Clock();
 		
 		//Act
-		LocalTime time = LocalTime.of(0, 0,0,0);
-		String output = clock.provideFiveMinutesLamp(time);
+		int numberOfLamps = 0;
+		String output = clock.provideFiveMinutesLamp(numberOfLamps);
 		
 		//Assert
 		Assert.assertEquals("OOOOOOOOOOO", output);
@@ -32,8 +32,8 @@ public class FiveMinuteLampTest {
 		Clock clock = new Clock();
 		
 		//Act
-		LocalTime time = LocalTime.of(0, 5,0,0);
-		String output = clock.provideFiveMinutesLamp(time);
+		int numberOfLamps = 1;
+		String output = clock.provideFiveMinutesLamp(numberOfLamps);
 		
 		//Assert
 		Assert.assertEquals("YOOOOOOOOOO", output);		
@@ -45,38 +45,14 @@ public class FiveMinuteLampTest {
 		Clock clock = new Clock();
 		
 		//Act
-		LocalTime time = LocalTime.of(0, 10,0,0);
-		String output = clock.provideFiveMinutesLamp(time);
+		int numberOfLamps = 2;
+		String output = clock.provideFiveMinutesLamp(numberOfLamps);
 		
 		//Assert
 		Assert.assertEquals("YYOOOOOOOOO", output);		
 	}
 	
-	@Test
-	public void elevenMinutesReturnsYYOOOOOOOOO() {
-		//Arrange
-		Clock clock = new Clock();
 		
-		//Act
-		LocalTime time = LocalTime.of(0, 11,0,0);
-		String output = clock.provideFiveMinutesLamp(time);
-		
-		//Assert
-		Assert.assertEquals("YYOOOOOOOOO", output);		
-	}
-	
-	@Test
-	public void seventeenMinutesReturnsYYROOOOOOOO() {
-		//Arrange
-		Clock clock = new Clock();
-		
-		//Act
-		LocalTime time = LocalTime.of(0, 17,0,0);
-		String output = clock.provideFiveMinutesLamp(time);
-		
-		//Assert
-		Assert.assertEquals("YYROOOOOOOO", output);		
-	}
 	
 	@Test
 	public void fiftynineMinutesReturnsYYRYYRYYRYY() {
@@ -84,8 +60,8 @@ public class FiveMinuteLampTest {
 		Clock clock = new Clock();
 		
 		//Act
-		LocalTime time = LocalTime.of(0, 59,0,0);
-		String output = clock.provideFiveMinutesLamp(time);
+		int numberOfLamps = 11;
+		String output = clock.provideFiveMinutesLamp(numberOfLamps);
 		
 		//Assert
 		Assert.assertEquals("YYRYYRYYRYY", output);		

@@ -17,8 +17,8 @@ public class SingleMinutesLampTest {
 		Clock clock = new Clock();
 		
 		//Act
-		LocalTime time = LocalTime.of(0, 0, 0, 0);
-		String output = clock.provideSingleMinutesLamp(time);
+		int minute = 0;
+		String output = clock.provideSingleMinutesLamp(minute);
 		
 		//Assert
 		Assert.assertEquals("OOOO", output);
@@ -30,8 +30,8 @@ public class SingleMinutesLampTest {
 		Clock clock = new Clock();
 		
 		//Act
-		LocalTime time = LocalTime.of(0, 1, 0, 0);
-		String output = clock.provideSingleMinutesLamp(time);
+		int minute = 1;
+		String output = clock.provideSingleMinutesLamp(minute);
 		
 		//Assert
 		Assert.assertEquals("YOOO", output);
@@ -43,8 +43,8 @@ public class SingleMinutesLampTest {
 		Clock clock = new Clock();
 		
 		//Act
-		LocalTime time = LocalTime.of(0, 2, 0, 0);
-		String output = clock.provideSingleMinutesLamp(time);
+		int minute = 2;
+		String output = clock.provideSingleMinutesLamp(minute);
 		
 		//Assert
 		Assert.assertEquals("YYOO", output);
@@ -56,8 +56,8 @@ public class SingleMinutesLampTest {
 		Clock clock = new Clock();
 		
 		//Act
-		LocalTime time = LocalTime.of(0, 4, 0, 0);
-		String output = clock.provideSingleMinutesLamp(time);
+		int minute = 4;
+		String output = clock.provideSingleMinutesLamp(minute);
 		
 		//Assert
 		Assert.assertEquals("YYYY", output);

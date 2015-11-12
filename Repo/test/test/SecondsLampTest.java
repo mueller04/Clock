@@ -15,8 +15,8 @@ public class SecondsLampTest {
 		Clock clock = new Clock();
 		
 		//act
-		LocalTime localtime = LocalTime.of(0, 0, 0, 0);
-		String output = clock.provideSecondsLamps(localtime);
+		int second = 0;
+		String output = clock.provideSecondsLamps(second);
 		
 		//assert
 		Assert.assertEquals("Y", output);
@@ -28,8 +28,8 @@ public class SecondsLampTest {
 		Clock clock = new Clock();
 
 		//act
-		LocalTime localtime = LocalTime.of(0, 0, 1, 0);
-		String output = clock.provideSecondsLamps(localtime);
+		int second = 1;
+		String output = clock.provideSecondsLamps(second);
 
 		//assert
 		Assert.assertEquals("O", output);
