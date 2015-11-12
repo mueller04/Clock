@@ -41,7 +41,16 @@ public class Clock {
 	
 	public String provideFiveMinutesLamp(LocalTime time){
 		
+		int minute = time.getMinute();
+		int modulus = minute % 5; 
+		minute = minute - modulus;
+		int numberOfLamps = minute / 5;
+		
 		String[] returnString = {"O","O","O","O","O","O","O","O","O","O","O"};
+		
+		for (int i = 0; i <= numberOfLamps - 1; i++){
+			returnString[i] = "Y";			
+		}	
 		
 		String result = String.join("", returnString);
 		return result;
