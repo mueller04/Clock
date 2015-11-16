@@ -30,15 +30,17 @@ public class Clock {
 		
 		int hour = time.getHour();
 		FiveHoursLamp fiveHoursLamp = new FiveHoursLamp();
-		ResultSet hourResult = DisplayMinutesAndHours(hour, "hours", "R", fiveHoursLamp);
-		System.out.println(hourResult.fiveRow);
-		System.out.println(hourResult.singleRow);
+		PrintDisplayTime(hour, "hour", "R", fiveHoursLamp);
 		
 		int minute = time.getMinute();
 		FiveMinutesLamp fiveMinutesLamp = new FiveMinutesLamp();
-		ResultSet minuteResult = DisplayMinutesAndHours(minute, "minutes", "Y", fiveMinutesLamp);
-		System.out.println(minuteResult.fiveRow);
-		System.out.println(minuteResult.singleRow);
+		PrintDisplayTime(minute, "minute", "Y", fiveMinutesLamp);
+	}
+	
+	public void PrintDisplayTime(int timeUnit, String desc, String color, FiveUnitLamp fiveLamp){
+		ResultSet result = DisplayMinutesAndHours(timeUnit, desc, color, fiveLamp);
+		System.out.println(result.fiveRow);
+		System.out.println(result.singleRow);
 	}
 	
 	public ResultSet DisplayMinutesAndHours(int timeUnit, String desc, String color, FiveUnitLamp fiveLamp) {
